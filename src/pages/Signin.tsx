@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { useFormValidation } from "@/Hooks/useFormValidation";
 import FormCard from "@/components/Form";
+import { useFormValidation } from "@/Hooks/useFormValidation";
 
-const Signup: FC = () => {
-  const { validateInputs, inputFields } = useFormValidation(true);
+const Signin: FC = () => {
+  const { validateInputs, inputFields } = useFormValidation(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -14,17 +14,17 @@ const Signup: FC = () => {
   };
   return (
     <FormCard
-      button="Sign Up"
-      title="Sign Up"
+      button="Sign In"
+      title="Sign In"
       inputFields={inputFields}
       handleSubmit={handleSubmit}
-      footer="Already have an account?"
+      footer="Don't have an account?"
       footerLink={{
-        text: "Sign in",
-        href: "/signin",
+        text: "Sign up",
+        href: "/signup",
       }}
     />
   );
 };
 
-export default Signup;
+export default Signin;
